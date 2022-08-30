@@ -1,0 +1,26 @@
+#:kivy 2.1.0
+<DeckCreateScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 20
+        padding_horizontal: 500
+
+        MDTextField:
+            id: deck_name
+            hint_text: 'Deck Name'
+            mode: 'rectangle'
+
+        ScrollView:
+            id: create_scroll_view
+            MDTextField:
+                id: words_textarea
+                hint_text: 'Words'
+                mode: 'rectangle'
+                multiline: True
+                height: create_scroll_view.height
+
+        MDRaisedButton:
+            id: create_deck_button
+            text: 'Create'
+            md_bg_color: 1, 0, 1, 1
+            on_press: root.create_deck()

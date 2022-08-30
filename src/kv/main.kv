@@ -1,0 +1,28 @@
+#:kivy 2.1.0
+<LogScreen>:
+    ScrollView:
+        id: log_scroll_view
+
+        MDTextField:
+            id: text_field_logs
+            hint_text: 'Logs'
+            mode: 'rectangle'
+            multiline: True
+            readonly: True
+            height: log_scroll_view.height
+
+<MainManager>:
+    id: main_screen_manager
+
+    create_screen: create_screen
+    status_screen: status_screen
+
+    DeckCreateScreen:
+        id: create_screen
+        name: 'create_screen'
+        manager: main_screen_manager
+
+    DeckStatusScreen:
+        id: status_screen
+        name: 'status_screen'
+        manager: main_screen_manager

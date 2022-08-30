@@ -1,0 +1,29 @@
+#:kivy 2.1.0
+<DeckStatusScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding_vertical: 2
+        padding_horizontal: 5
+
+        MDProgressBar:
+            id: words_progress_bar
+            type: 'determinate'
+            color: app.theme_cls.accent_color
+
+        ScrollView:
+            id: status_scroll_view
+            MDTextField:
+                id: text_field_logs
+                text: root.logs_text
+                hint_text: 'Logs'
+                mode: 'rectangle'
+                halign: 'center'
+                multiline: True
+                readonly: True
+                height: status_scroll_view.height
+
+        MDRaisedButton:
+            id: go_back_button
+            text: 'Back'
+            md_bg_color: 1, 0, 1, 1
+            on_press: root.go_back()
